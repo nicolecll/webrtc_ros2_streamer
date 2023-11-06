@@ -4,7 +4,7 @@
   <name>begginer</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="nicole.caballero@uc.cl">martinorrego</maintainer>
+  <maintainer email="nicole.caballero@uc.cl">Nicole Caballero/maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
