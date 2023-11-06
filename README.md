@@ -17,6 +17,7 @@ List of tools, libraries, or prior knowledge necessary to use the project. For e
 - av
 - Basic knowledge of WebRTC and video streaming
 - An appropriate development environment for working with ROS2 and Python.
+- **Have the rosbag2_2023_10_25-09_13_26 folder at the same height as the nodes folder in this repository.**
 
 
 ## Installation and Usage
@@ -54,7 +55,8 @@ This allows the user to choose the resolution of the images through the user int
 ## Warnings
 - The site can be viewed correctly from devices such as laptops, android phones and tablets. Its use on IOS devices is not implemented.
 - If the application cannot be displayed correctly, check the rules that allow incoming and outgoing traffic on port 8081 in the device's firewall, it may be necessary to create them if they do not exist.
-
+- Check that the  rosbag2_2023_10_25-09_13_26 folder is at the same height as the nodes folder and that it contains the metada.yaml and rosbag2_2023_10_25-09_13_26_0.db3 file.
+  
 ## Visit the web application
 
 The web application is hosted at address 0.0.0.0.0 (localhost) on port 8081, if you want to visit it on the same device that runs the ros nodes, you must open the browser and in the browser visit
@@ -145,3 +147,7 @@ Another difficulty faced was the use of launch files, as when trying to launch t
 Finally one of the most important difficulties was the improvement of the latency of the transmission, although I tried to improve the efficiency of the code and the transmission, in the first images of the rosbag you can notice high latency. 
 
 ## To be improved
+1. Launching nodes through launch files
+2. Streamlining existing code to improve the smoothness of transmission
+
+## Bonus: To be developed and explained in the interview 
