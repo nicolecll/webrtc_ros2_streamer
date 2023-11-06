@@ -12,9 +12,9 @@ List of tools, libraries, or prior knowledge necessary to use the project. For e
 - Python 3.x
 - ROS2 (Robot Operating System 2)
 - OpenCV
-- aiortc
-- aiohttp
-- av
+- aiortc (pip install aiortc)
+- aiohttp (pip install aiohttp)
+- av (pip install av)
 - Basic knowledge of WebRTC and video streaming
 - An appropriate development environment for working with ROS2 and Python.
 - **Have the rosbag2_2023_10_25-09_13_26 folder at the same height as the nodes folder in this repository.**
