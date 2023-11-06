@@ -34,15 +34,20 @@ colcon build
 ```bash
 cd begginer/nodes
 ```
-4. Execute the node reader_bag with the command
+4. Change permission files 
+```bash
+chmod a+x reader_bag.py
+chmod a+x server.py
+```
+5. Execute the node reader_bag with the command
 ```bash
 ./reader_bag.py
 ```
-5. Open another console and move to nodes directory again
+6. Open another console and move to nodes directory again
 ```bash
 cd begginer/nodes
 ```
-6. Execute the server node with the command
+7. Execute the server node with the command
 ```bash
 ./server.py
 ```
