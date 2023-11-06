@@ -1,0 +1,187 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC streming</title>
+    <style>
+
+    body {
+    font-family: Georgia, serif;
+    align-items: center;
+    justify-content: center;
+    background: #000123;
+    color: #ddd;
+    }
+
+    .big-title {
+        font-size: 300%;
+        font-family: Georgia, serif;
+        align-items: center;
+
+    }
+
+  
+    .contenedor-horizontal{
+    display: flex; 
+}
+
+
+    .elemento-izquierda {
+
+    flex: 1; 
+    background-color: #20202d;
+    }
+
+    .elemento-derecha {
+    flex: 3; 
+    margin-left: 30px;
+    }
+
+    .contenedor-vertical{
+    display: flex;
+    flex-direction: column;
+
+    }
+
+
+
+    button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+
+  
+  button:hover {
+    background-color: deeppink;
+  }
+
+  label {
+    font-size: 0.9rem; 
+    margin-right: 16px;
+    margin-left: 16px;
+    font-family: 'Courier New', monospace;
+
+}
+    .option {
+        margin: 16px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-family: 'Courier New', monospace;
+        border-radius: 3px;
+    }
+
+    .option select {
+    margin: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+  }
+  .state-labels{
+        font-family: 'Courier New', monospace;
+        font-size: 80%;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .state-container {
+        justify-content: space-between;
+        background-color: #4D4949;
+    }
+
+    pre {
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-left: 15px;
+        font-family: 'Courier New', monospace;
+        font-size: 80%;
+
+    }
+
+    video {
+        width: 100%;
+    }
+
+    .option {
+        margin-bottom: 8px;
+    }
+
+    #media {
+        max-width: 1280px;
+    }
+
+    .title {
+        font-family: 'Courier New', monospace;
+        font-size: 150%;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+
+
+</style>
+</head>
+<body>
+<div class="contenedor-horizontal" >
+<div class="elemento-izquierda">
+<div class="contenedor-vertical">
+<div class="title">Options</div>
+<div class="option">
+    <label for="use-datachannel"> Datachannel</label>
+    <select id="datachannel-parameters">
+        <option value='{"ordered": true}'>Ordered, reliable</option>
+        <option value='{"ordered": false, "maxRetransmits": 0}'>Unordered, no retransmissions</option>
+        <option value='{"ordered": false, "maxPacketLifetime": 500}'>Unordered, 500ms lifetime</option>
+    </select>
+</div>
+
+<div class="option">
+    <label for="use-video">   Video</label>
+    <select id="video-resolution">
+        <option value="" selected>Default resolution</option>
+        <option value="320x240">320x240</option>
+        <option value="640x480">640x480</option>
+        <option value="960x540">960x540</option>
+        <option value="1280x720">1280x720</option>
+    </select>
+
+</div>
+
+<button id="start" onclick="start()">Start transmission</button>
+<button id="stop" style="display: none" onclick="stop()">Stop</button>
+<div class="state-container">
+    <div class="title">State</div>
+
+    <div class="state-labels">ICE gathering state: <span id="ice-gathering-state"></span></div>
+    <div class="state-labels">ICE connection state: <span id="ice-connection-state"></span></div>
+    <div class="state-labels">Signaling state: <span id="signaling-state"></span></div>
+
+<div class="title">Data Channel</div>
+<pre id="data-channel" style="height: 200px;"></pre>
+
+</div>
+</div>
+</div>
+
+<div class="elemento-derecha"> 
+<div id="media" style="display: block">
+    <div class="title">Topic /cam_front/image_raw</div>
+    <video id="video" autoplay="true" playsinline="true"></video>
+</div>
+</div>
+
+</div>
+
+<script src="client.js"></script>
+</body>
+</html>
