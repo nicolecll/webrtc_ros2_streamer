@@ -1,11 +1,11 @@
 # webrtc_ros2_streamer
 This repository hosts an advanced ROS2 package designed to seamlessly integrate WebRTC into robotic applications. Its primary purpose is to facilitate real-time transmission of images and visual data captured from specific ROS2 topics.
 
-# Webrtc stream for ros2 topics
+# Webrtc stream for ros2 topics:robot:
 
 This project aims to transmit images from a ros2 topic called **/cam_front/image_raw** through a peer to peer architecture provided by WebRTC, WebRTC is a free and open source project that provides web browsers and mobile applications with real-time communication through application programming interfaces. 
 
-## Prerequisites
+## Prerequisites:white_check_mark:
 
 List of tools, libraries, or prior knowledge necessary to use the project. For example:
 
@@ -20,7 +20,7 @@ List of tools, libraries, or prior knowledge necessary to use the project. For e
 - **Have the rosbag2_2023_10_25-09_13_26 folder at the same height as the nodes folder in this repository.**
 
 
-## Installation and Usage
+## Installation and Usage:computer:
 
 1. Clone begginer ros2 package into your ros2 workspace
 ```bash
@@ -52,12 +52,12 @@ The server node has two modes, manual and automatic, by default it runs in autom
 ```
 This allows the user to choose the resolution of the images through the user interface.
 
-## Warnings
+## Warnings:warning:
 - The site can be viewed correctly from devices such as laptops, android phones and tablets. Its use on IOS devices is not implemented.
 - If the application cannot be displayed correctly, check the rules that allow incoming and outgoing traffic on port 8081 in the device's firewall, it may be necessary to create them if they do not exist.
 - Check that the  rosbag2_2023_10_25-09_13_26 folder is at the same height as the nodes folder and that it contains the metada.yaml and rosbag2_2023_10_25-09_13_26_0.db3 file.
   
-## Visit the web application
+## Visit the web application:key:
 
 The web application is hosted at address 0.0.0.0.0 (localhost) on port 8081, if you want to visit it on the same device that runs the ros nodes, you must open the browser and in the browser visit
 
@@ -74,7 +74,7 @@ Where IP_HOST is the IP of the device that mounts the web application, this must
 
 The application cannot be visited from devices that are not on the same local network.
 
-## Files documentation
+## Files documentation:file_folder:
 
 ### 1. reader_bag.py
 
@@ -138,7 +138,7 @@ This JavaScript file is designed to establish and manage a WebRTC peer connectio
 
 File that allows the client to view the web application.
 
-## Difficulties faced
+## Difficulties faced:brain:
 
 One of the main difficulties I faced in the development of this technical test was the implementation of the webrtc architecture, in particular the communication and the offer for the client to receive media from the server, in particular configuring the connection and allowing more than one connection. 
 
@@ -146,8 +146,8 @@ Another difficulty faced was the use of launch files, as when trying to launch t
 
 Finally one of the most important difficulties was the improvement of the latency of the transmission, although I tried to improve the efficiency of the code and the transmission, in the first images of the rosbag you can notice high latency. 
 
-## To be improved
+## To be improved:next_track_button:
 1. Launching nodes through launch files
 2. Streamlining existing code to improve the smoothness of transmission
 
-## Bonus: To be developed and explained in the interview 
+## Bonus: To be developed and explained in the interview:bulb:
