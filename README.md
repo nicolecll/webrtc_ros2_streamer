@@ -156,3 +156,10 @@ Finally one of the most important difficulties was the improvement of the latenc
 2. Streamlining existing code to improve the smoothness of transmission
 
 ## Bonus: To be developed and explained in the interview:bulb:
+
+### How to handle multiple robots streaming? 
+
+One way to allow the user to access the transmission of multiple bots is by using two tools, ROS_DOMAIN_ID and the assignment of unique topics. 
+The first is to assign all participating robots the same ROS_DOMAIN_ID, this will allow the same topics and nodes to be visible to all robots. Then one of the robots or even a device such as a computer should act as a base and read the information of the topics where each robot publishes the images it collects, for this each robot must publish the images of its sensors in a unique topic, which could be associated with its id, for example /cam_front/image_raw_{ID_ROBOT}, this robot or base device collects the image of all topics and raises the server that allows the user to view the video stream you want.
+Ideally, under this flow, the system can prioritise lowering the latency of the stream you want to watch and leave those that are not a priority in the background. 
+
