@@ -164,5 +164,5 @@ The first is to assign all participating robots the same ROS_DOMAIN_ID, this wil
 Ideally, under this flow, the system can prioritise lowering the latency of the stream you want to watch and leave those that are not a priority in the background. 
 
 Other options:
-  -GStremer on ros2
-  -Kurento Media Server
+  - GStremer on ROS2
+  - Kurento Media Server
