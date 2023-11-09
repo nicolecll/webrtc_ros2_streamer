@@ -163,3 +163,6 @@ One way to allow the user to access the transmission of multiple bots is by usin
 The first is to assign all participating robots the same ROS_DOMAIN_ID, this will allow the same topics and nodes to be visible to all robots. Then one of the robots or even a device such as a computer should act as a base and read the information of the topics where each robot publishes the images it collects, for this each robot must publish the images of its sensors in a unique topic, which could be associated with its id, for example /cam_front/image_raw_{ID_ROBOT}, this robot or base device collects the image of all topics and raises the server that allows the user to view the video stream you want.
 Ideally, under this flow, the system can prioritise lowering the latency of the stream you want to watch and leave those that are not a priority in the background. 
 
+Other options:
+  -GStremer on ros2
+  -Kurento Media Server
